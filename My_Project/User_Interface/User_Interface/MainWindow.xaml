@@ -23,12 +23,12 @@
             <RowDefinition Height="90"/>
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Grid.Row="0">
-            <Polygon Fill="Black" 
-                     Opacity="0.3"
-                     Points="107.0,
-                     115.7,
-                     249.7,
-                     257.0"/>
+            <Polygon Fill="white" 
+                     Opacity="0.1"
+                     Points="107,0,
+                     115,7,
+                     249,7,
+                     257,0"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Image Height="25" Width="25" Source="/krest_nonActive.png"/>
                 <Image Height="25" Width="25" Source="/krest_active.png"/>
