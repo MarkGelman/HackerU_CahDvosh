@@ -5,50 +5,142 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameCenter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1400">
+        Title="MainWindow" Height="450" Width="800" Background="#FF110203" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MaxHeight="600" MaxWidth="1000"
+        MinHeight="600" MinWidth="1000">
+    <Window.Resources>
+        <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
+            <Grid Name="Btn" Height="40" Margin="20 0 0 0">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="23" VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF9D9999"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Btn}" 
+                                                     Value ="true">
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                                Mode=FindAncestor,
+                                                AncestorType={x:Type Button}},
+                                                Path = IsPressed}" Value="true">
+                                            <Setter Property="Foreground" Value="#FF9D9999"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource 
+                                                Mode=FindAncestor,
+                                                AncestorType={x:Type Button}},
+                                                Path=IsFocused}" Value="true">
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" Margin="-3 0 0 0"
+                               HorizontalAlignment="Center" FontSize="23" FontWeight="Bold">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource 
+                                                Mode=FindAncestor,
+                                                AncestorType={x:Type Button}},
+                                                Path=IsFocused}" Value="true">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <BlurEffect Radius="25"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                       
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                        Mode=FindAncestor,
+                                        AncestorType={x:Type Button}},
+                                        Path = IsPressed}" Value="true">
+                                    <Setter Property="Margin" Value="0,2,0,0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="SlideMenuBtn" TargetType="Button">
+            <Grid Name="Btn" Height="45">
+                <Border>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{DynamicResource ResourceKey=Img}"
+                    </StackPanel>
+                </Border>
+                
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-
-            <ColumnDefinition Width="0.5*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="0.5*" />
-
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-
-            <RowDefinition Height="0.3*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="0.25*" />
-
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <Label 
-            x:Name="TitleLabel"
-            Content="Game Center" 
-            Grid.Row="0" 
-            Grid.Column="0" 
-            Grid.ColumnSpan="3" 
-            Background="AliceBlue"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center" FontFamily="Arial Black" FontSize="40"
-        />
-
-        <WrapPanel
-            x:Name="GamesContainer"
-            Grid.Row="1" 
-            Grid.Column="1" 
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-        >
-
-            <Image x:Name="Image1" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
-            <Image x:Name="Image2" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp"/>
-            <Image x:Name="Image3" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave" MouseLeftButtonUp="Image3_MouseLeftButtonUp"/>/>
-            <Image x:Name="Image4" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
-            <Image x:Name="Image5" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
-            <Image x:Name="Image6" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
-
-        </WrapPanel>
+        <Grid Name="TopMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Сообщества"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Общие"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Name="SlideMenu" Grid.Row="1" Grid.Column="0">
+            <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031" Background="Black" Opacity="0.6">
+                <StackPanel>
+                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/WOW.PNG</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/WOW.PNG</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/WOW.PNG</ImageSource>
+                        </Button.Resources>
+                    </Button>
+                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                        <Button.Resources>
+                            <ImageSource x:Key="Img">Res/Icons/WOW.PNG</ImageSource>
+                        </Button.Resources>
+                     </Button>
+                        <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                            <Button.Resources>
+                                <ImageSource x:Key="Img">Res/Icons/WOW.PNG</ImageSource>
+                            </Button.Resources>
+                        </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

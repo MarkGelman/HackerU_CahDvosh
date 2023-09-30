@@ -7,9 +7,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Modem\" />
-    <Folder Include="ViewMode\" />
-  </ItemGroup>
-
 </Project>

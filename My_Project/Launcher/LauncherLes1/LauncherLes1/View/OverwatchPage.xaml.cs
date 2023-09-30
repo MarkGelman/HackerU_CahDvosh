@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameCenter
+namespace LauncherLes1.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для OverwatchPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OverwatchPage : Page
     {
-        public MainWindow()
+        public OverwatchPage()
         {
             InitializeComponent();
         }

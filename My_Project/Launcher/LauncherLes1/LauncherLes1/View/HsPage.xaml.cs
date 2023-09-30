@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameCenter
+namespace LauncherLes1.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для HsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HsPage : Page
     {
-        public MainWindow()
+        public HsPage()
         {
             InitializeComponent();
         }

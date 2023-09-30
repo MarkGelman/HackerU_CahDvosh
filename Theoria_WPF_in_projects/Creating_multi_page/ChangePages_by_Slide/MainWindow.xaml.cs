@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameCenter
+namespace ChangePages_by_Slide
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

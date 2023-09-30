@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameCenter
+namespace LauncherLes1.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для W3.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class W3 : Page
     {
-        public MainWindow()
+        public W3()
         {
             InitializeComponent();
         }

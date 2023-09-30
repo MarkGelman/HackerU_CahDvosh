@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameCenter
+namespace Creating_multi_page
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,21 @@ namespace GameCenter
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Page1_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new Page1();
+        }
+
+        private void Page2_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new Page2();
+        }
+
+        private void Page3_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new Page3();
         }
     }
 }
