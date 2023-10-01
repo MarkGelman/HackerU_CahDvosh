@@ -8,13 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\square1.jpeg" />
-    <None Remove="Images\square2.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\square1.jpeg" />
-    <Resource Include="Images\square2.png" />
+    <Folder Include="Modem\" />
+    <Folder Include="ViewMode\" />
   </ItemGroup>
 
 </Project>
