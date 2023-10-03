@@ -85,7 +85,8 @@
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{DynamicResource ResourceKey=Img}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30"
                                Height="30" Stretch="Fill" Margin="20 0 0 0"/>
-                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="14" VerticalAlignment="Center">
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="14" VerticalAlignment="Center"
+                               Margin="10 0 0 0">
                             <Label.Style>
                                 <Style TargetType="Label">
                                     <Setter Property="Foreground" Value="#FF9D9999"/>
@@ -134,90 +135,129 @@
                         </Style>
                     </Border.Style>
                 </Border>
+                <Border Name="BlowLineSelect" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                            <Setter Property="BorderThickness" Value="3,0,0,0"/>
+                            <Setter Property="BorderBrush" Value="#FF00AEFF"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                    Mode=FindAncestor,
+                                    AncestorType={x:Type Button}},
+                                    Path=IsFocused}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
             </Grid>
         </ControlTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="90"/>
-            <ColumnDefinition Width="130"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid Name="TopMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
-            <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
-                <StackPanel Orientation="Horizontal">
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Сообщества"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Общие"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                </StackPanel>
-            </Border>
-        </Grid>
-        <Grid Name="SlideMenu" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-            <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031" Background="Black" Opacity="0.6">
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+        <Frame Name="ForPrograms" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="10"/>
+       
+        <Grid Name="TopMenu" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+                <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Сообщества"/>
+                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Общие"/>
+                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        <Grid Name="SlideMenu" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Width" Value="225"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsChecked, ElementName=OpenCloseSlideMenuBtn}" 
+                                         Value="true">
+                            <Setter Property="Width" Value="65"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Border BorderThickness="1,0,1,0" BorderBrush="#FF303031" Background="Black" Opacity="0.6">
                 <StackPanel>
-                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm" Click="Button_Click">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\WOW.PNG</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codbo4.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\warcraaft3.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\sc2.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw2.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\sc.png</ImageSource>
-                        </Button.Resources>
-                     </Button>
-                        <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
-                            <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\overwatch.png</ImageSource>
-                            </Button.Resources>
-                        </Button>
-                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
-                        <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\hs.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\diablo.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\hots.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\hots.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\diablo.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\hs.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw2.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\overwatch.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw.png</ImageSource>
-                        </Button.Resources>
-                    </Button>
-                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
-                        <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Mark\Documents\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\codbo4.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\sc.png</ImageSource>
                         </Button.Resources>
                     </Button>
                 </StackPanel>
             </Border>
+            <ToggleButton Name="OpenCloseSlideMenuBtn" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="20,0,0,20" Focusable="False">
+                <ToggleButton.Template>
+                    <ControlTemplate>
+                        <Image>
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Source" Value="C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Close.png"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                    Mode=FindAncestor,
+                    AncestorType={x:Type ToggleButton}},
+                    Path = IsChecked}" Value="true">
+                                            <Setter Property="Source" Value="C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Open.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
         </Grid>
     </Grid>
 </Window>

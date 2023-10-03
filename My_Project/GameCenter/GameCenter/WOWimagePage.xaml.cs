@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace GameCenter
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WOWimagePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WOWimagePage : Page
     {
-        Page ticTacToe = new TicTocToe();
-        Page imageWOW = new WOWimagePage();
-
-        public MainWindow()
+        public WOWimagePage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ForPrograms.Content = ticTacToe;
         }
     }
 }
