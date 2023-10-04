@@ -167,7 +167,7 @@
             </Grid.RowDefinitions>
 
 
-        <Frame Name="ForPrograms" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="10"/>
+        <Frame Name="ForPrograms" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="10"/>
        
         <Grid Name="TopMenu" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
                 <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
@@ -196,17 +196,17 @@
                 <StackPanel>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm" Click="Button_Click">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codbo4.png</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\WOW.PNG</ImageSource>
                         </Button.Resources>
                     </Button>
-                    <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
+                    <!--<Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
                             <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\codmw2.png</ImageSource>
+                            <ImageSource x:Key="Img">\View\Res\Icons\codmw2.png</ImageSource>
                         </Button.Resources>
                     </Button>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
@@ -232,8 +232,8 @@
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
                         <Button.Resources>
                             <ImageSource x:Key="Img">C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\sc.png</ImageSource>
-                        </Button.Resources>
-                    </Button>
+                        </Button.Resources>-->
+                    <!--</Button>-->
                 </StackPanel>
             </Border>
             <ToggleButton Name="OpenCloseSlideMenuBtn" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
@@ -243,13 +243,13 @@
                         <Image>
                             <Image.Style>
                                 <Style TargetType="Image">
-                                    <Setter Property="Source" Value="C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Close.png"/>
+                                    <Setter Property="Source" Value="C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Close.png"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource
                     Mode=FindAncestor,
                     AncestorType={x:Type ToggleButton}},
                     Path = IsChecked}" Value="true">
-                                            <Setter Property="Source" Value="C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Open.png"/>
+                                            <Setter Property="Source" Value="C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Open.png"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
