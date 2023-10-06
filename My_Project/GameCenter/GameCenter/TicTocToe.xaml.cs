@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,61 +14,72 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace GameCenter
 {
     
     public partial class TicTocToe : Page
     {
-        bool turn = true; //true = x turn; false = o turn
-        int turn_count = 0;
+        TicTocToeLogic ticTocToeLogic = new TicTocToeLogic();
+        private int col;
+        private int row;  
+
         public TicTocToe()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void PlayerClick(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
-            b.Content = turn ? "X" : "O";
+            Button button = sender as Button;
+            button.Content = ticTocToeLogic.CurrentPlayer;
+            button.IsEnabled = false;
 
+            col = Grid.GetColumn(button);
+            row = Grid.GetRow(button);
             
-
-            turn = !turn;
-            b.IsEnabled = false;
-
-            checkForWinner();
-                
+            if (ticTocToeLogic.CheckForWinner(col,row))
+            {
+               foreach(var control in gridBoard.Children)
+                {
+                    Button button1 = control as Button;
+                    button.IsEnabled = true;
+                }
+                   
+                        
+               Announcement(true);
+            }
+            else
+            {
+                if (ticTocToeLogic.IsBoardFull())
+                    Announcement(false);
+                else
+                    ticTocToeLogic.SetNextPlayer();
+            }
         }
 
-        private void checkForWinner()
+
+        private void Announcement(bool winner)
         {
-            bool isWinner = false;
+            winnerTxt.Text = winner ? $"{ticTocToeLogic.CurrentPlayer} WINS!!!" : "TECO!!!";
+            winnerTxt.Visibility = Visibility.Visible;
 
-            //Vertical cheks and event content of all buttons is empty
-            if((A1.Content == A2.Content) &&(A2.Content == A3.Content) && (!A1.IsEnabled))
-                isWinner = true;
-            else if ((B1.Content == B2.Content) && (B2.Content == B3.Content) && (!B1.IsEnabled))
-                isWinner = true;
-            else if ((C1.Content == C2.Content) && (C2.Content == C3.Content) && (!C1.IsEnabled))
-                isWinner = true;
-
-            //dioganal cheks
-            if(!B2.IsEnabled)
-                if ((A1.Content == B2.Content) && (B2.Content == C3.Content))
-                    isWinner = true;
-                else if ((A3.Content == B2.Content) && (B2.Content == C1.Content))
-                    isWinner = true;
+        }
 
 
-            //Message about winner
-            if(isWinner)
+        private void btnNewGame_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(var control in gridBoard.Children)
             {
-                String winner = "";
-                winner = turn? "O" : "X";
-
-                MessageBox.Show(winner + "Wins!", "Yhoooooo!");
+                Button button = control as Button;
+                button.IsEnabled = true;
+                button.Content = String.Empty; 
+               
             }
-   
+
+            ticTocToeLogic = new TicTocToeLogic();
+            winnerTxt.Visibility = Visibility.Collapsed;
+
         }
     }
 }

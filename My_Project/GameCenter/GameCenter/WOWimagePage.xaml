@@ -9,6 +9,6 @@
       Title="WOWimagePage">
 
     <Grid>
-        <Image Source="C:\Users\USER\Documents\Марк\.NET\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Background\MainWOW.png"/>
+        <Image Source="View\Res\Background\MainWOW.png"/>
     </Grid>
 </Page>

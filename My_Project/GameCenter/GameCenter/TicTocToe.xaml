@@ -4,28 +4,31 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GameCenter"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="TicTocToe">
+      mc:Ignorable="d"
+      Title="TicTocToe" Height="420" Width="795">
     <Page.Resources>
         <ControlTemplate x:Key="TicTocButton">
             <Button 
+                    Name="Btn"
                     Height="135" 
-                    Width="165" 
-                    Background="#FFBE8DE2" 
+                    Width="135" 
+                    Grid.Row="{TemplateBinding Grid.Row}"
+                    Grid.Column="{TemplateBinding Grid.Column}"
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center"
                     FontFamily="Microsoft Sans Serif"
+                    Foreground="White"
+                    Background="Transparent"
+                    Content=""
                     FontSize="100">
                 <Button.Style>
                     <Style TargetType="Button">
+                        <EventSetter Event="Click" Handler="PlayerClick"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource
-                                Mode=FindAncestor,
-                                AncestorType={x:Type Button}}, 
-                                Path=IsMouseOver}" 
-                                            Value ="true">
-                                <Setter Property="Background" Value="#FFAE97E2"/>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Btn}" 
+                                         Value="true">
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Opacity" Value="0.1"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -33,37 +36,37 @@
             </Button>
         </ControlTemplate>
     </Page.Resources>
-    <Grid Background="#FFD9D9D9">
-
-        <Grid Margin="64 0 0 0" Background="#FFD9D9D9">
+    <Grid  Grid.Row="0" Grid.Column="0" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="74*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="gridBoard">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
             </Grid.RowDefinitions>
-
-            <Border Grid.Column="3" Grid.Row="0" Grid.RowSpan="3" Background="#FFAE97E2">
-                <Border BorderThickness="3,3,3,3">
-
-                    <Button Background="Transparent" Margin="0 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Content="New Game"/>
-                </Border>
-
-            </Border>
-            <Button Name="A1" Grid.Column="0" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="A2" Grid.Column="0" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="A3" Grid.Column="0" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="B1" Grid.Column="1" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="B2" Grid.Column="1" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="B3" Grid.Column="1" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="C1" Grid.Column="2" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="C2" Grid.Column="2" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
-            <Button Name="C3" Grid.Column="2" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}" Click="Button_Click" />
+            <Button Name="A1" Grid.Column="0" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="A2" Grid.Column="0" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="A3" Grid.Column="0" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="B1" Grid.Column="1" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="B2" Grid.Column="1" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="B3" Grid.Column="1" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="C1" Grid.Column="2" Grid.Row="0" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="C2" Grid.Column="2" Grid.Row="1" Template="{StaticResource ResourceKey=TicTocButton}"  />
+            <Button Name="C3" Grid.Column="2" Grid.Row="2" Template="{StaticResource ResourceKey=TicTocButton}"  />
         </Grid>
+
+        <TextBlock Name="winnerTxt" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="56" FontWeight="Bold" Background="WhiteSmoke" Visibility="Collapsed">Player X is winner</TextBlock>
+        <Border Grid.Column="1" BorderBrush="White" BorderThickness="1">
+            <Button x:Name="btnNewGame" Height="50" Width="165" Content="New Game" Background="Transparent" Foreground="White" FontSize="25"
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Click="btnNewGame_Click"/>
+        </Border>
     </Grid>
 </Page>

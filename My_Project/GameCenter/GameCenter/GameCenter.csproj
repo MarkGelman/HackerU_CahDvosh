@@ -8,8 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Modem\" />
-    <Folder Include="ViewMode\" />
+    <Compile Remove="Modem\**" />
+    <Compile Remove="ViewMode\**" />
+    <EmbeddedResource Remove="Modem\**" />
+    <EmbeddedResource Remove="ViewMode\**" />
+    <None Remove="Modem\**" />
+    <None Remove="ViewMode\**" />
+    <Page Remove="Modem\**" />
+    <Page Remove="ViewMode\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

@@ -166,28 +166,27 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-
+        
+        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10" Source="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\TopBackground\TopWOW.png"/>
+        <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="10" Source="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Background\MainWOW.png"/>
         <Frame Name="ForPrograms" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="10"/>
        
-        <Grid Name="TopMenu" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+        <Grid Name="TopMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                 <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
-                    <StackPanel Orientation="Horizontal">
-                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Сообщества"/>
-                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="Общие"/>
-                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                        <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
-                    </StackPanel>
-                </Border>
+
+                <Label x:Name="Header" Content="Game Center" Foreground="White" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                           FontFamily="Bold Old English" FontSize="60" FontWeight="Bold"/>
+            </Border>
             </Grid>
         <Grid Name="SlideMenu" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <Grid.Style>
                 <Style TargetType="Grid">
-                    <Setter Property="Width" Value="225"/>
+                    <Setter Property="Width" Value="65"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=IsChecked, ElementName=OpenCloseSlideMenuBtn}" 
                                          Value="true">
-                            <Setter Property="Width" Value="65"/>
+                            <Setter Property="Width" Value="225"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -196,7 +195,7 @@
                 <StackPanel>
                     <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm" Click="Button_Click">
                         <Button.Resources>
-                            <ImageSource x:Key="Img">C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\WOW.PNG</ImageSource>
+                            <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\WOW.PNG</ImageSource>
                         </Button.Resources>
                     </Button>
                     <!--<Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Name of programm">
@@ -243,13 +242,13 @@
                         <Image>
                             <Image.Style>
                                 <Style TargetType="Image">
-                                    <Setter Property="Source" Value="C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Close.png"/>
+                                    <Setter Property="Source" Value="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\Open.png"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource
-                    Mode=FindAncestor,
-                    AncestorType={x:Type ToggleButton}},
-                    Path = IsChecked}" Value="true">
-                                            <Setter Property="Source" Value="C:\Users\Igor\Source\Repos\HackerU_CahDvosh\My_Project\GameCenter\GameCenter\View\Res\Icons\Open.png"/>
+                                                Mode=FindAncestor,
+                                                AncestorType={x:Type ToggleButton}},
+                                                Path = IsChecked}" Value="true">
+                                            <Setter Property="Source" Value="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\GameCenter\GameCenter\View\Res\Icons\Close.png"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
