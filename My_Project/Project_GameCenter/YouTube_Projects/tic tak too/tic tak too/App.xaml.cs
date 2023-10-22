@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Google_API___Material_UI
+namespace tic_tak_too
 {
     /// <summary>
     /// Interaction logic for App.xaml

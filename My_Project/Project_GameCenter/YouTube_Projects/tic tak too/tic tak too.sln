@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google API & Material UI", "Google API & Material UI\Google API & Material UI.csproj", "{736675A4-203E-4AA0-9BF3-A8EC491C72F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tic tak too", "tic tak too\tic tak too.csproj", "{D016F9A6-8EF0-4C69-BBCA-16CCA47C0BBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{736675A4-203E-4AA0-9BF3-A8EC491C72F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{736675A4-203E-4AA0-9BF3-A8EC491C72F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{736675A4-203E-4AA0-9BF3-A8EC491C72F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{736675A4-203E-4AA0-9BF3-A8EC491C72F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D016F9A6-8EF0-4C69-BBCA-16CCA47C0BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D016F9A6-8EF0-4C69-BBCA-16CCA47C0BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D016F9A6-8EF0-4C69-BBCA-16CCA47C0BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D016F9A6-8EF0-4C69-BBCA-16CCA47C0BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {163CFE6B-AAAB-4B3D-AF72-38E25F54369E}
+		SolutionGuid = {C3F14507-BABC-400A-B93A-1B78D3BEFDBD}
 	EndGlobalSection
 EndGlobal
