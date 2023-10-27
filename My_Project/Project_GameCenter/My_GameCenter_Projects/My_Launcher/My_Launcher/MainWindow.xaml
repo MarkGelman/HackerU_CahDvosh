@@ -169,15 +169,46 @@
             <Border Background="Black"
                     Opacity="0.6"/>
             <StackPanel>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
-                <Button Height="100" Template="{StaticResource ResourceKey=SlideMenuBtn}"></Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="World Of Warcraft">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/WOW.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Hearthstone">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/hs.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Overwatch">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/overwatch.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Warcraft III">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/warcraaft3.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Diablo III">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/diablo.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Heroes of the Storm">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/hots.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="StarCraft II">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/sc2.png</ImageSource>
+                    </Button.Resources>
+                </Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="StarCraft">
+                    <Button.Resources>
+                        <ImageSource x:Key="Img">res/icons/sc.png</ImageSource>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>
