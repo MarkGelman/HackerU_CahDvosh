@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Launcher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000" Background="#ff110203"
+        Title="MainWindow" Height="600" Width="1000" Background="#ff110203" WindowState="Maximized"
                 WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
         <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
@@ -151,8 +151,8 @@
             <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="1" Grid.ColumnSpan="3"  Source="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\View\Res\Background\MainWOW.png"/>
-        <Image Grid.Column="1" Source="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\View\Res\TopBackground\TopWOW.png"/>
+        <Image Grid.Row="1" Grid.ColumnSpan="3"  Source="View\Res\Background\MainWOW.png"/>
+        <Image Grid.Column="1" Source="View\Res\TopBackground\TopWOW.png"/>
         <!--Grid - TopMenu-->
         
         <Grid x:Name="TopMenuButton" Grid.ColumnSpan="2">
@@ -189,42 +189,42 @@
             <StackPanel>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\wow.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\codbo4.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\codmw.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\codmw2.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\diablo.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\hots.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\hs.png</ImageSource>
                     </Button.Resources>
                 </Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"  Content="WOW">
                     <Button.Resources>
-                        <ImageSource x:Key="Img">C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\wow.png</ImageSource>
+                        <ImageSource x:Key="Img">View\Res\Icons\warcraaft3.png</ImageSource>
                     </Button.Resources>
                 </Button>
             </StackPanel>
@@ -239,13 +239,13 @@
                         <Image>
                             <Image.Style>
                                 <Style TargetType="Image">
-                                    <Setter Property="Source" Value="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\Open.png"/>
+                                    <Setter Property="Source" Value="View\Res\Icons\Open.png"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource
                                             Mode=FindAncestor,
                                             AncestorType={x:Type ToggleButton}},
                                             Path=IsChecked}" Value="true">
-                                            <Setter Property="Source" Value="C:\Users\markg\source\repos\ХакерЮ\HackerU_CahDvosh\My_Project\My_Project\Project_GameCenter\My_GameCenter_Projects\My_Launcher\My_Launcher\Res\Icons\Close.png"/>
+                                            <Setter Property="Source" Value="View\Res\Icons\Close.png"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
