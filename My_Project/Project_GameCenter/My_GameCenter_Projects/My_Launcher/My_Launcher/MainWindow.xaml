@@ -150,12 +150,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Image Grid.Row="1" Grid.ColumnSpan="3"  Source="View\Res\Background\MainWOW.png"/>
-        <Image Grid.Column="1" Source="View\Res\TopBackground\TopWOW.png"/>
+        </Grid.RowDefinitions>  
+        <Image x:Name="imgBackground" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <Image x:Name="imgTop" Grid.Row="0" Grid.ColumnSpan="3"/>
         <!--Grid - TopMenu-->
         
-        <Grid x:Name="TopMenuButton" Grid.ColumnSpan="2">
+        <Grid x:Name="TopMenuButton" Grid.ColumnSpan="2"> 
            
             <Border BorderThickness="1" BorderBrush="#ff303031" 
                     Background="Transparent">

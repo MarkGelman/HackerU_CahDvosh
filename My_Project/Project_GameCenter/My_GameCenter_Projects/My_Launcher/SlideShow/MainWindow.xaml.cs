@@ -1,5 +1,4 @@
-﻿using My_Launcher.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,30 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace My_Launcher
+namespace SlideShow
 {
-    using My_Launcher.Model;
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    using System;
-    using System.IO;
-    using System.Windows;
-    using System.Windows.Media.Imaging;
-
     public partial class MainWindow : Window
     {
-        
-
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new SlideShowModel(); 
-           
         }
-
-        
     }
-
 }

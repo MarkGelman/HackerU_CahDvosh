@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="View\Res\Background\MainWOW.png" />
+    <None Remove="View\Res\Background\WOW.png" />
     <None Remove="View\Res\Icons\Close.png" />
     <None Remove="View\Res\Icons\codbo4.png" />
     <None Remove="View\Res\Icons\codmw.png" />
@@ -22,18 +22,18 @@
     <None Remove="View\Res\Icons\sc2.png" />
     <None Remove="View\Res\Icons\warcraaft3.png" />
     <None Remove="View\Res\Icons\wow.png" />
-    <None Remove="View\Res\TopBackground\TopDIABLO.png" />
-    <None Remove="View\Res\TopBackground\TopHOTS.png" />
-    <None Remove="View\Res\TopBackground\TopHS.png" />
-    <None Remove="View\Res\TopBackground\TopOW.png" />
-    <None Remove="View\Res\TopBackground\TopSC.png" />
-    <None Remove="View\Res\TopBackground\TopSC2.png" />
-    <None Remove="View\Res\TopBackground\TopW3.png" />
-    <None Remove="View\Res\TopBackground\TopWOW.png" />
+    <None Remove="View\Res\TopBackground\DIABLO.png" />
+    <None Remove="View\Res\TopBackground\HOTS.png" />
+    <None Remove="View\Res\TopBackground\HS.png" />
+    <None Remove="View\Res\TopBackground\OW.png" />
+    <None Remove="View\Res\TopBackground\SC.png" />
+    <None Remove="View\Res\TopBackground\SC2.png" />
+    <None Remove="View\Res\TopBackground\W3.png" />
+    <None Remove="View\Res\TopBackground\WOW.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="View\Res\Background\MainWOW.png">
+    <Content Include="View\Res\Background\WOW.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="View\Res\Icons\Close.png">
@@ -75,28 +75,28 @@
     <Content Include="View\Res\Icons\wow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopDIABLO.png">
+    <Content Include="View\Res\TopBackground\DIABLO.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopHOTS.png">
+    <Content Include="View\Res\TopBackground\HOTS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopHS.png">
+    <Content Include="View\Res\TopBackground\HS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopOW.png">
+    <Content Include="View\Res\TopBackground\OW.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopSC.png">
+    <Content Include="View\Res\TopBackground\SC.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopSC2.png">
+    <Content Include="View\Res\TopBackground\SC2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopW3.png">
+    <Content Include="View\Res\TopBackground\W3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\TopWOW.png">
+    <Content Include="View\Res\TopBackground\WOW.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
