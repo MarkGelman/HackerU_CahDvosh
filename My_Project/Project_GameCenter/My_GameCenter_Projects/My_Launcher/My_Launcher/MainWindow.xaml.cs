@@ -16,12 +16,7 @@ using System.Windows.Shapes;
 
 namespace My_Launcher
 {
-    using My_Launcher.Model;
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    using System;
+   
     using System.IO;
     using System.Windows;
     using System.Windows.Media.Imaging;
@@ -33,7 +28,7 @@ namespace My_Launcher
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new SlideShowModel(); 
+            DataContext = new SlideShowViewModel(); 
            
         }
 

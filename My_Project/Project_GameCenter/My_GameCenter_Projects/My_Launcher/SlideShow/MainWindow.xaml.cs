@@ -23,6 +23,7 @@ namespace SlideShow
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using My_Launcher.Model;
+using My_Launcher.Model.DB;
+using My_Launcher.Model.IHelper;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,25 +12,29 @@ using System.Windows.Threading;
 
 namespace My_Launcher.ViewModel
 {
-    public class SlideShowViewModel : INotifyPropertyChanged
+    internal class SlideShowViewModel : ForPropertyChanged
     {
         private ObservableCollection<SlideShowModel> images;
-        private SlideShowModel _slide; 
-
-        private int currentIndex;
+        ImageFileProvider imageFileProvider;
         private DispatcherTimer timer;
 
+        public string pathToTopImageFiles = "view/res/top";
+        public string pathToBackImageFiles = "view/res/background";
+        private int currentIndex;
+        
+     
         public SlideShowViewModel()
         {
-            _slide = new SlideShowModel();
-
-            foreach (string topFile in _slide.imageTopFiles) 
-                foreach(string backFile in _slide.imageBackFiles)
-                {
-                    if(topFile == backFile)
-
-                }
-
+            imageFileProvider = new ImageFileProvider();
+            var topImagesPathsList = imageFileProvider.GetImageFilesPaths(pathToTopImageFiles);
+            var backgroundImagesPathsList = imageFileProvider.GetImageFilesPaths(pathToBackImageFiles);
+            foreach( var topImageFile in topImagesPathsList )
+                foreach(var backImageFile in backgroundImagesPathsList)
+                    if(topImageFile == backImageFile)
+                        Images = new ObservableCollection<SlideShowModel>
+                        {
+                            new SlideShowModel{pathToBackImageFile = backImageFile, pathToTopImageFile = topImageFile}
+                        };
             // Настройка таймера для автоматической смены слайдов
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(5); // Интервал смены слайдов (5 секунд в данном случае)
@@ -36,7 +42,7 @@ namespace My_Launcher.ViewModel
             timer.Start();
         }
 
-        public ObservableCollection<ImageModel> Images
+        public ObservableCollection<SlideShowModel> Images
         {
             get { return images; }
             set
@@ -56,12 +62,7 @@ namespace My_Launcher.ViewModel
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
 
         // Метод для переключения к следующему слайду
         public void NextSlide()

@@ -22,14 +22,14 @@
     <None Remove="View\Res\Icons\sc2.png" />
     <None Remove="View\Res\Icons\warcraaft3.png" />
     <None Remove="View\Res\Icons\wow.png" />
-    <None Remove="View\Res\TopBackground\DIABLO.png" />
-    <None Remove="View\Res\TopBackground\HOTS.png" />
-    <None Remove="View\Res\TopBackground\HS.png" />
-    <None Remove="View\Res\TopBackground\OW.png" />
-    <None Remove="View\Res\TopBackground\SC.png" />
-    <None Remove="View\Res\TopBackground\SC2.png" />
-    <None Remove="View\Res\TopBackground\W3.png" />
-    <None Remove="View\Res\TopBackground\WOW.png" />
+    <None Remove="View\Res\Top\DIABLO.png" />
+    <None Remove="View\Res\Top\HOTS.png" />
+    <None Remove="View\Res\Top\HS.png" />
+    <None Remove="View\Res\Top\OW.png" />
+    <None Remove="View\Res\Top\SC.png" />
+    <None Remove="View\Res\Top\SC2.png" />
+    <None Remove="View\Res\Top\W3.png" />
+    <None Remove="View\Res\Top\WOW.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,34 +75,53 @@
     <Content Include="View\Res\Icons\wow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\DIABLO.png">
+    <Content Include="View\Res\Top\DIABLO.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\HOTS.png">
+    <Content Include="View\Res\Top\HOTS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\HS.png">
+    <Content Include="View\Res\Top\HS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\OW.png">
+    <Content Include="View\Res\Top\OW.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\SC.png">
+    <Content Include="View\Res\Top\SC.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\SC2.png">
+    <Content Include="View\Res\Top\SC2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\W3.png">
+    <Content Include="View\Res\Top\W3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Res\TopBackground\WOW.png">
+    <Content Include="View\Res\Top\WOW.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
     <PackageReference Include="IKVM" Version="8.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ViewModel\SLideShowViewModel.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

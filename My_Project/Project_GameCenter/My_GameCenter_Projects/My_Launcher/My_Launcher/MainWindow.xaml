@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Launcher"
+        xmlns:ssvm="clr-namespace:My_Launcher.ViewModel"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000" Background="#ff110203" WindowState="Maximized"
                 WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <!--<Window.DataContext>
+        --><!--<ssvm:SLideShowViewModel/>--><!--
+    </Window.DataContext>-->
     <Window.Resources>
         <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
             <Grid x:Name="Btn" Height="40" Margin="20 0 0 0">
@@ -150,16 +155,24 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition/>
-        </Grid.RowDefinitions>  
-        <Image x:Name="imgBackground" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <Image x:Name="imgTop" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <!--Grid - TopMenu-->
+        </Grid.RowDefinitions>
+        <Image  Grid.Row="1" Grid.ColumnSpan="3" Source="{Binding Images[CurrentIndex].pathToBackImageFile }"/>
+        <Image  Grid.Row="0" Grid.ColumnSpan="3" Source="{Binding Images[CurrentIndex].pathToTopImageFile }"/>
+        <Label  Grid.Row="0" Grid.Column="1" Content="GameCenter" FontSize="24" FontWeight="Bold" 
+                Foreground="White" HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
         
-        <Grid x:Name="TopMenuButton" Grid.ColumnSpan="2"> 
-           
+        <!--Grid - TopMenu-->
+
+        <Grid x:Name="TopMenuButton" Grid.ColumnSpan="2">
             <Border BorderThickness="1" BorderBrush="#ff303031" 
                     Background="Transparent">
                 <StackPanel Orientation="Horizontal">
+                    <ToggleButton x:Name="OpenCloseMenuBtn" Width="20" Height="20"
+                                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                                    Margin="20 0 0 0" Focusable="False">
+                        <TextBlock  Text="&#xf017;"/>
+                    </ToggleButton>
                     <Button Width="100" Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ"/>
                     <Button Width="100" Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ОБЩЕНИЕ"/>
                     <Button Width="100" Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН"/>

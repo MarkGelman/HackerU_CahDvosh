@@ -9,24 +9,10 @@ using System.Threading.Tasks;
 
 namespace My_Launcher.Model
 {
-    class SlideShowModel
+   internal class SlideShowModel
     {
-        public string[] imageBackFiles;
-        public string[] imageTopFiles;
+        public string pathToTopImageFile;
+        public string pathToBackImageFile;
 
-        public SlideShowModel()
-        {
-            try
-            {
-                // Загрузить список файлов изображений
-                imageBackFiles = Directory.GetFiles("View/res/Background", "*.png");
-                imageTopFiles = Directory.GetFiles("View/Res /imageTopBackgroundFiles", "*.png");
-                  
-            }
-            catch (Exception ex)
-            {
-                Show(ex.Message);
-            }
-        }
     }
 }
