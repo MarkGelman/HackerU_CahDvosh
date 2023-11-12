@@ -48,6 +48,8 @@ internal class Program
     {
         ConcurrentDictionary<string, int> freq = new ConcurrentDictionary<string, int>();
         string[] words = data.Split(new[] { ' ', '\n', '\t', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+        //Environment.ProcessorCount -- показывает сколько процессоров есть в данном компьютере
+        //Расчитываем сколько слов будет в каждом потоке с учётом к-ва процессоров
         int wordsPerThread = words.Length / Environment.ProcessorCount;
         Thread[] threads = new Thread[Environment.ProcessorCount];
         for (int i = 0; i < threads.Length; i++)
@@ -63,7 +65,7 @@ internal class Program
                     freq.AddOrUpdate(gram, 1, (_, count) => count + 1);
                 }
             });
-            threads[i].Start();
+            threads[i].Start(); ;l
 
         }
         foreach (var thread in threads)
@@ -81,7 +83,14 @@ internal class Program
         string[] words = data.Split(new[] { ' ', '\n', '\t', '\r' }, StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < words.Length - n + 1; i++)
         {
+            // Skip -- пропусти указанное к-во слов в скобках (переведи курсор)
+            // Take -- возьми от курсора указанное в скобках к-во элементов строки
+            // ToArray -- и добави их к массиву
+
             //string[] term = words.Skip(i).Take(n).ToArray();
+            //strin gram = string.Join(" ",term);
+
+            //Join в данной перезагрузке делает тоже самое в одной строчке, что было выше сделано в двух строках
             string gram = string.Join(" ", words, i, n);
             if (freq.ContainsKey(gram))
             {
@@ -90,7 +99,7 @@ internal class Program
             else
             {
                 freq[gram] = 1;
-            }
+            } 
         }
         return freq;
 
