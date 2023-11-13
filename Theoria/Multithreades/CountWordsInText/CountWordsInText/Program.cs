@@ -18,10 +18,11 @@ internal class Program
 
 
         stopwatch.Restart();
-        var threadedFrequencies = ParallelNgramsFreq(text, 4);
-        Console.WriteLine($"Threaded time: {stopwatch.ElapsedMilliseconds} ms");
-        Console.WriteLine($"Total unique 5-grams (Threaded): {threadedFrequencies.Count}");
-        PrintTopNGrams(threadedFrequencies, 5, "Threaded");
+
+        var parallelFrequencies = ComputeNGramsInParallel(text, 4);
+        Console.WriteLine($"Parallel time: {stopwatch.ElapsedMilliseconds} ms");
+        Console.WriteLine($"Total unique 5-grams (Parallel): {parallelFrequencies.Count}");
+        PrintTopNGrams(parallelFrequencies, 5, "Parallel");
 
 
 
@@ -75,6 +76,40 @@ internal class Program
         //create 8 threads and each of them count the frequency of the terms
         //use in the ConcurrentDictionary - Add or update
         return freq.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+    }
+
+    static Dictionary<string, int> ComputeNGramsInParallel(string data, int n)
+
+    {
+
+        string[] sentences = data.Split('.');
+
+        ConcurrentDictionary<string, int> freq = new ConcurrentDictionary<string, int>();
+
+        Console.WriteLine("There is " + sentences.Length + " sentences in the data");
+
+        Parallel.ForEach(sentences, sentence =>
+
+        {
+
+            string[] words = sentence.Split(new[] { ' ', '\n', '\t', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < words.Length - n + 1; i++)
+
+            {
+
+                string gram = string.Join(" ", words, i, n);
+
+                freq.AddOrUpdate(gram, 1, (_, count) => count + 1);
+
+            }
+
+        });
+
+        return freq.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+
+
     }
 
     static Dictionary<string, int> NgramsFreq(string data, int n)
