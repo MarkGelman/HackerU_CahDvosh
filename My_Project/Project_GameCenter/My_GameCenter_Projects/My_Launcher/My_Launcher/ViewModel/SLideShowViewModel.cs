@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Threading;
 
 namespace My_Launcher.ViewModel
@@ -75,6 +76,11 @@ namespace My_Launcher.ViewModel
             {
                 CurrentIndex = 0; // Вернуться к первому слайду, если достигнут конец списка
             }
+        }
+
+        private void Load_LoginForm()
+        {
+           
         }
     }
 

@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My_Launcher", "My_Launcher\My_Launcher.csproj", "{57ED30D3-9937-4BBD-8CE7-5653BFFB46DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2} = {B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlideShow", "SlideShow\SlideShow.csproj", "{1A48F75B-2886-4694-81A3-2DE04EFBD0BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-LoginForm", "..\Login_form\WPF-LoginForm\WPF-LoginForm.csproj", "{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +20,10 @@ Global
 		{57ED30D3-9937-4BBD-8CE7-5653BFFB46DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57ED30D3-9937-4BBD-8CE7-5653BFFB46DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57ED30D3-9937-4BBD-8CE7-5653BFFB46DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A48F75B-2886-4694-81A3-2DE04EFBD0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A48F75B-2886-4694-81A3-2DE04EFBD0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A48F75B-2886-4694-81A3-2DE04EFBD0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A48F75B-2886-4694-81A3-2DE04EFBD0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B88027D1-FD36-4AA4-8FE3-1803A15C3EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
